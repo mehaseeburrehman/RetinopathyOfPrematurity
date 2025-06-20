@@ -1,5 +1,0 @@
-gradio
-tensorflow
-numpy
-Pillow
-pandas
