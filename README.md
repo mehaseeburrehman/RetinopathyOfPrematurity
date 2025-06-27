@@ -172,7 +172,7 @@ pip install -r requirements.txt
 brew install python
 
 # Clone repository
-git clone https://github.com/yourusername/ROP-Classification-System.git
+https://github.com/mehaseeburrehman/RetinopathyOfPrematurity.git
 cd ROP-Classification-System
 
 # Create virtual environment
@@ -190,7 +190,7 @@ sudo apt update
 sudo apt install python3 python3-pip python3-venv git
 
 # Clone repository
-git clone https://github.com/yourusername/ROP-Classification-System.git
+https://github.com/mehaseeburrehman/RetinopathyOfPrematurity.git
 cd ROP-Classification-System
 
 # Create virtual environment
@@ -222,7 +222,7 @@ gdown "YOUR_GOOGLE_DRIVE_FILE_ID" -O models/vgg16_Segnet.pth
 #### 3. Sample Images Setup
 
 \`\`\`bash
-# Create sample directory
+# Create a sample directory
 mkdir sample
 
 # Add your sample images with these exact names:
