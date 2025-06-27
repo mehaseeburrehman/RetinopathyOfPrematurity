@@ -1,318 +1,247 @@
-# 🔬 ROP Image Classification Web App
+# 🔬 Retinopathy of Prematurity (ROP) Classification System
 
-A complete machine learning web application for classifying ROP images with user authentication, prediction history, and easy deployment capabilities.
+A comprehensive web application for classifying eye images to detect Retinopathy of Prematurity using VGG16+SegNet deep learning model with user authentication and prediction history.
 
 ## 🌟 Features
 
+- **🤖 AI-Powered Classification**: VGG16+SegNet model for accurate ROP detection
 - **🔐 User Authentication**: Secure login/signup with password hashing
-- **🤖 AI Prediction**: Classify ROP images into 4 categories:
-  - Healthy
-  - Retinal Detachment  
-  - Type 1 (Diabetic Retinopathy - Mild/Moderate)
-  - Type 2 (Diabetic Retinopathy - Severe/Proliferative)
-- **📊 Prediction History**: View and download your prediction history
-- **💾 Data Export**: Download history as CSV
-- **🎨 Modern UI**: Clean, responsive interface with Gradio
-- **🗄️ SQLite Database**: Lightweight, file-based storage
+- **📊 Prediction History**: Track and download your prediction history
+- **🖼️ Sample Images**: Pre-loaded sample images for quick testing
+- **💾 Data Export**: Download prediction history as CSV
+- **🎨 Modern UI**: Clean, responsive Gradio interface
 
-## 🚀 Quick Start
+## 🏥 Medical Classifications
 
-### Local Installation
-🔬 ROP Classification System - AI-powered web application for detecting Retinopathy of Prematurity using VGG16+SegNet deep learning model.
-
-📥 Download Links:
-🤖 Model: https://drive.google.com/file/d/12nBZuHOqeJZm_ykhC4nSzYr5wHgPV2x_/view?usp=sharing
-📊 Dataset: https://drive.google.com/file/d/1Bn37j9GG7JW9RoVzMQd_aex_dvAf2lHR/view?usp=sharing
-
-🚀 Quick Start: python setup.py && python app.py
-1. **Clone or download the project files**
-
-2. **Install dependencies:**
-   \`\`\`bash
-   pip install -r requirements.txt
-   \`\`\`
-
-3. **Add your Keras model:**
-   - Place your trained `.h5` model file in the project directory
-   - Rename it to `ROP_classification_model.h5`
-   - Or update the model path in `model_handler.py`
-
-4. **Run the application:**
-   \`\`\`bash
-   python app.py
-   \`\`\`
-
-5. **Open your browser:**
-   - Go to `http://localhost:7860`
-   - Create an account and start classifying!
-
-### 🌐 Deploy on Hugging Face Spaces
-
-1. **Create a new Space on [Hugging Face](https://huggingface.co/spaces)**
-   - Choose "Gradio" as the SDK
-   - Set visibility to "Public" or "Private"
-
-2. **Upload files:**
-   - Upload all Python files (`app.py`, `auth.py`, `database.py`, `model_handler.py`)
-   - Upload `requirements.txt`
-   - Upload your trained model file (`ROP_classification_model.h5`)
-
-3. **Your app will automatically deploy!**
-   - HF Spaces will install dependencies and start the app
-   - Access via your Space URL
-
-### 🔄 Deploy on Replit
-
-1. **Create a new Repl**
-   - Choose "Python" template
-
-2. **Upload project files**
-   - Upload all Python files and requirements.txt
-   - Upload your model file
-
-3. **Install dependencies:**
-   \`\`\`bash
-   pip install -r requirements.txt
-   \`\`\`
-
-4. **Run:**
-   \`\`\`bash
-   python app.py
-   \`\`\`
+The system classifies eye images into 4 categories:
+- **Healthy**: Normal retina condition
+- **RD**: Retinal Detachment
+- **Type 1**: Mild Retinopathy of Prematurity
+- **Type 2**: Severe Retinopathy of Prematurity
 
 ## 📁 Project Structure
 
 \`\`\`
-ROP-classification-app/
-├── app.py                 # Main Gradio application
-├── auth.py               # User authentication logic
-├── database.py           # Database operations
-├── model_handler.py      # ML model loading and prediction
-├── requirements.txt      # Python dependencies
-├── README.md            # This file
-├── ROP_classification_model.h5  # Your trained model (add this)
-├── users.db             # SQLite database (created automatically)
-└── predictions.db       # Predictions database (created automatically)
+ROP-Classification-System/
+├── app.py                    # Main application entry point
+├── auth.py                   # User authentication system
+├── database.py               # Database operations (SQLite)
+├── model_handler.py          # ML model loading and prediction
+├── requirements.txt          # Python dependencies
+├── README.md                 # This documentation
+├── setup.py                  # Installation script
+├── ui_components/            # UI modules
+│   ├── __init__.py
+│   ├── login_ui.py          # Login/Register interface
+│   ├── prediction_ui.py     # Prediction interface
+│   ├── history_ui.py        # History management
+│   └── about_ui.py          # About page
+├── sample/                   # Sample images (create this folder)
+│   ├── healthy.jpg          # Healthy retina sample
+│   ├── type1.jpg            # Type 1 ROP sample
+│   ├── type2.jpg            # Type 2 ROP sample
+│   └── rd.jpg               # Retinal Detachment sample
+├── models/                   # Model files (create this folder)
+│   └── vgg16_Segnet.pth     # Your trained model (download separately)
+└── docs/                     # Documentation
+    ├── installation.md
+    ├── usage.md
+    └── model_info.md
 \`\`\`
 
-## 🔧 Configuration
+## 🚀 Quick Start
 
-### Model Configuration
-Edit `model_handler.py` to customize:
-- Model file path
-- Input image size
-- Class names
-- Preprocessing steps
+### Prerequisites
 
-### Database Configuration
-Edit `database.py` and `auth.py` to customize:
-- Database file paths
-- Table schemas
-- Data retention policies
+- Python 3.8 or higher
+- CUDA-compatible GPU (optional, for faster inference)
+- 4GB+ RAM
+- Internet connection for initial setup
 
-### UI Configuration
-Edit `app.py` to customize:
-- Interface layout
-- Styling (CSS)
-- Tab organization
-- Messages and text
+### 1. Clone Repository
 
-## 🧪 Testing
-
-### Demo Credentials
-The app creates accounts dynamically. For testing:
-
-1. **Register a new account:**
-   - Username: `demo_user`
-   - Password: `demo123`
-
-2. **Test the prediction:**
-   - Upload any ROP image
-   - View the prediction result
-   - Check prediction history
-
-### Model Testing
-If you don't have a trained model yet:
-- The app includes a dummy model for demonstration
-- It will make random predictions for testing purposes
-- Replace with your actual trained model for real predictions
-
-## 🔒 Security Features
-
-- **Password Hashing**: Uses bcrypt for secure password storage
-- **SQL Injection Protection**: Parameterized queries
-- **Input Validation**: Image format and size validation
-- **Session Management**: Secure user session handling
-
-## 📊 Database Schema
-
-### Users Table
-\`\`\`sql
-CREATE TABLE users (
-    id INTEGER PRIMARY KEY AUTOINCREMENT,
-    username TEXT UNIQUE NOT NULL,
-    password_hash TEXT NOT NULL,
-    created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP
-);
+\`\`\`bash
+git clone https://github.com/yourusername/ROP-Classification-System.git
+cd ROP-Classification-System
 \`\`\`
 
-### Predictions Table
-\`\`\`sql
-CREATE TABLE predictions (
-    id INTEGER PRIMARY KEY AUTOINCREMENT,
-    username TEXT NOT NULL,
-    image_data TEXT NOT NULL,
-    prediction TEXT NOT NULL,
-    confidence REAL NOT NULL,
-    timestamp TIMESTAMP DEFAULT CURRENT_TIMESTAMP
-);
+### 2. Download Required Files
+
+#### Download Trained Model
+\`\`\`bash
+# Create models directory
+mkdir models
+
+# Download the trained model (replace with your actual model link)
+wget -O models/vgg16_Segnet.pth "YOUR_MODEL_DOWNLOAD_LINK"
+# OR manually download from: [Your Model Link]
 \`\`\`
 
-## 🚨 Important Notes
+#### Download Sample Images (Optional)
+\`\`\`bash
+# Create sample directory
+mkdir sample
 
-- **Medical Disclaimer**: This tool is for educational/research purposes only
-- **Always consult healthcare professionals** for medical diagnosis
-- **Data Privacy**: User data is stored locally in SQLite databases
-- **Model Performance**: Accuracy depends on your trained model quality
-
-## 🛠️ Troubleshooting
-
-### Common Issues
-
-1. **Model not loading:**
-   - Check if `ROP_classification_model.h5` exists
-   - Verify model file is not corrupted
-   - Check TensorFlow version compatibility
-
-2. **Database errors:**
-   - Ensure write permissions in project directory
-   - Check if SQLite is properly installed
-
-3. **Gradio not starting:**
-   - Check if port 7860 is available
-   - Try different port: `app.launch(server_port=7861)`
-
-4. **Dependencies issues:**
-   - Update pip: `pip install --upgrade pip`
-   - Install in virtual environment
-   - Check Python version (3.8+ recommended)
-
-### Getting Help
-
-If you encounter issues:
-1. Check the console output for error messages
-2. Verify all dependencies are installed correctly
-3. Ensure your model file is compatible with TensorFlow/Keras
-4. Test with the dummy model first
-
-## 📈 Future Enhancements
-
-Potential improvements:
-- [ ] Add image preprocessing options
-- [ ] Implement batch prediction
-- [ ] Add prediction confidence visualization
-- [ ] Include model performance metrics
-- [ ] Add data export in multiple formats
-- [ ] Implement user roles and permissions
-- [ ] Add prediction analytics dashboard
-
-## 📄 License
-
-This project is open source. Please ensure compliance with your model's licensing terms.
-
----
-
-**Ready to classify ROP images with AI! 🚀**
+# Download sample images from dataset or use your own
+# Place 4 sample images: healthy.jpg, type1.jpg, type2.jpg, rd.jpg
 \`\`\`
 
-Let's also create a simple deployment script:
+### 3. Install Dependencies
 
-```python file="deploy.py"
-#!/usr/bin/env python3
-"""
-Deployment helper script for ROP Image Classification App
-"""
+#### Option A: Using pip
+\`\`\`bash
+pip install -r requirements.txt
+\`\`\`
 
-import os
-import sys
-import subprocess
-import shutil
+#### Option B: Using conda
+\`\`\`bash
+conda create -n rop-classification python=3.8
+conda activate rop-classification
+pip install -r requirements.txt
+\`\`\`
 
-def check_requirements():
-    """Check if all required files exist"""
-    required_files = [
-        'app.py',
-        'auth.py', 
-        'database.py',
-        'model_handler.py',
-        'requirements.txt'
-    ]
-    
-    missing_files = []
-    for file in required_files:
-        if not os.path.exists(file):
-            missing_files.append(file)
-    
-    if missing_files:
-        print(f"❌ Missing required files: {', '.join(missing_files)}")
-        return False
-    
-    print("✅ All required files found")
-    return True
+#### Option C: Using setup script
+\`\`\`bash
+python setup.py install
+\`\`\`
 
-def install_dependencies():
-    """Install Python dependencies"""
-    print("📦 Installing dependencies...")
-    try:
-        subprocess.check_call([sys.executable, '-m', 'pip', 'install', '-r', 'requirements.txt'])
-        print("✅ Dependencies installed successfully")
-        return True
-    except subprocess.CalledProcessError:
-        print("❌ Failed to install dependencies")
-        return False
+### 4. Run the Application
 
-def check_model():
-    """Check if model file exists"""
-    model_files = ['ROP_classification_model.h5', 'model.h5', 'ROP_model.h5']
-    
-    for model_file in model_files:
-        if os.path.exists(model_file):
-            print(f"✅ Found model file: {model_file}")
-            return True
-    
-    print("⚠️  No model file found. App will use dummy model for demonstration.")
-    print("   Add your trained model file (ROP_classification_model.h5) to enable real predictions.")
-    return False
+\`\`\`bash
+python app.py
+\`\`\`
 
-def run_app():
-    """Run the application"""
-    print("🚀 Starting ROP Image Classification App...")
-    try:
-        subprocess.run([sys.executable, 'app.py'])
-    except KeyboardInterrupt:
-        print("\n👋 App stopped by user")
-    except Exception as e:
-        print(f"❌ Error running app: {e}")
+The application will start and display:
+\`\`\`
+🚀 Starting Retinopathy of prematurity App...
+📊 Initializing database...
+✅ Database initialized successfully
+🤖 Loading ML model...
+✅ Model loaded successfully!
+✅ App ready!
+Running on local URL: http://127.0.0.1:7860
+\`\`\`
 
-def main():
-    """Main deployment function"""
-    print("🔬 ROP Image Classification App - Deployment Helper")
-    print("=" * 50)
-    
-    # Check requirements
-    if not check_requirements():
-        sys.exit(1)
-    
-    # Install dependencies
-    if not install_dependencies():
-        sys.exit(1)
-    
-    # Check model
-    check_model()
-    
-    # Run app
-    print("\n" + "=" * 50)
-    run_app()
+### 5. Access the Application
 
-if __name__ == "__main__":
-    main()
+Open your web browser and navigate to:
+- **Local**: http://localhost:7860
+- **Network**: Use the public URL if share=True
+
+## 📖 Detailed Installation Guide
+
+### System Requirements
+
+#### Minimum Requirements:
+- **OS**: Windows 10, macOS 10.14, or Ubuntu 18.04+
+- **Python**: 3.8+
+- **RAM**: 4GB
+- **Storage**: 2GB free space
+- **GPU**: Optional (CPU inference supported)
+
+#### Recommended Requirements:
+- **RAM**: 8GB+
+- **GPU**: NVIDIA GPU with 4GB+ VRAM
+- **Storage**: 5GB+ free space
+
+### Step-by-Step Installation
+
+#### 1. Environment Setup
+
+**Windows:**
+\`\`\`cmd
+# Install Python from python.org
+# Open Command Prompt as Administrator
+
+# Clone repository
+git clone https://github.com/yourusername/ROP-Classification-System.git
+cd ROP-Classification-System
+
+# Create virtual environment
+python -m venv rop_env
+rop_env\Scripts\activate
+
+# Install dependencies
+pip install -r requirements.txt
+\`\`\`
+
+**macOS:**
+\`\`\`bash
+# Install Homebrew if not installed
+/bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
+
+# Install Python
+brew install python
+
+# Clone repository
+git clone https://github.com/yourusername/ROP-Classification-System.git
+cd ROP-Classification-System
+
+# Create virtual environment
+python3 -m venv rop_env
+source rop_env/bin/activate
+
+# Install dependencies
+pip install -r requirements.txt
+\`\`\`
+
+**Ubuntu/Linux:**
+\`\`\`bash
+# Update system
+sudo apt update
+sudo apt install python3 python3-pip python3-venv git
+
+# Clone repository
+git clone https://github.com/yourusername/ROP-Classification-System.git
+cd ROP-Classification-System
+
+# Create virtual environment
+python3 -m venv rop_env
+source rop_env/bin/activate
+
+# Install dependencies
+pip install -r requirements.txt
+\`\`\`
+
+#### 2. Model Setup
+
+\`\`\`bash
+# Create models directory
+mkdir models
+
+# Download your trained model
+# Method 1: Direct download (replace URL)
+curl -L -o models/vgg16_Segnet.pth "YOUR_DIRECT_MODEL_URL"
+
+# Method 2: From Google Drive (if using Google Drive)
+# Install gdown first: pip install gdown
+gdown "YOUR_GOOGLE_DRIVE_FILE_ID" -O models/vgg16_Segnet.pth
+
+# Method 3: Manual download
+# Download from your provided link and place in models/ folder
+\`\`\`
+
+#### 3. Sample Images Setup
+
+\`\`\`bash
+# Create sample directory
+mkdir sample
+
+# Add your sample images with these exact names:
+# - healthy.jpg (normal retina)
+# - type1.jpg (mild ROP)
+# - type2.jpg (severe ROP) 
+# - rd.jpg (retinal detachment)
+\`\`\`
+
+#### 4. Configuration (Optional)
+
+Create `config.py` for custom settings:
+```python
+# config.py
+MODEL_PATH = "models/vgg16_Segnet.pth"
+SAMPLE_DIR = "sample/"
+DATABASE_PATH = "predictions.db"
+USERS_DB_PATH = "users.db"
+HOST = "127.0.0.1"
+PORT = 7860
