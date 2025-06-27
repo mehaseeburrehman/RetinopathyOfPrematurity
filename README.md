@@ -54,15 +54,14 @@ ROP-Classification-System/
 ### Prerequisites
 
 - Python 3.8 or higher
-- CUDA-compatible GPU (optional, for faster inference)
+- higher then i5 2nd gen
 - 4GB+ RAM
 - Internet connection for initial setup
 
 ### 1. Clone Repository
 
 \`\`\`bash
-git clone https://github.com/yourusername/ROP-Classification-System.git
-cd ROP-Classification-System
+https://github.com/mehaseeburrehman/RetinopathyOfPrematurity.git
 \`\`\`
 
 ### 2. Download Required Files
@@ -76,13 +75,14 @@ mkdir models
 wget -O models/vgg16_Segnet.pth "YOUR_MODEL_DOWNLOAD_LINK"
 # OR manually download from: [Your Model Link]
 \`\`\`
+https://drive.google.com/file/d/12nBZuHOqeJZm_ykhC4nSzYr5wHgPV2x_/view?usp=sharing
 
 #### Download Sample Images (Optional)
 \`\`\`bash
-# Create sample directory
-mkdir sample
+# Download  images from dataset or use your own
 
-# Download sample images from dataset or use your own
+https://drive.google.com/file/d/1Bn37j9GG7JW9RoVzMQd_aex_dvAf2lHR/view?usp=sharing
+
 # Place 4 sample images: healthy.jpg, type1.jpg, type2.jpg, rd.jpg
 \`\`\`
 
