@@ -89,14 +89,8 @@ https://drive.google.com/file/d/1Bn37j9GG7JW9RoVzMQd_aex_dvAf2lHR/view?usp=shari
 pip install -r requirements.txt
 \`\`\`
 
-#### Option B: Using conda
-\`\`\`bash
-conda create -n rop-classification python=3.8
-conda activate rop-classification
-pip install -r requirements.txt
-\`\`\`
 
-#### Option C: Using setup script
+#### Option B: Using setup script
 \`\`\`bash
 python setup.py install
 \`\`\`
