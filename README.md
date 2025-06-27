@@ -209,21 +209,13 @@ mkdir models
 
 # Download your trained model
 # Method 1: Direct download (replace URL)
-curl -L -o models/vgg16_Segnet.pth "YOUR_DIRECT_MODEL_URL"
-
+https://drive.google.com/file/d/12nBZuHOqeJZm_ykhC4nSzYr5wHgPV2x_/view?usp=drive_link
 # Method 2: From Google Drive (if using Google Drive)
-# Install gdown first: pip install gdown
-gdown "YOUR_GOOGLE_DRIVE_FILE_ID" -O models/vgg16_Segnet.pth
 
 # Method 3: Manual download
 # Download from your provided link and place in models/ folder
 \`\`\`
-
-#### 3. Sample Images Setup
-
-\`\`\`bash
-# Create a sample directory
-mkdir sample
+https://drive.google.com/file/d/12nBZuHOqeJZm_ykhC4nSzYr5wHgPV2x_/view?usp=drive_link
 
 # Add your sample images with these exact names:
 # - healthy.jpg (normal retina)
