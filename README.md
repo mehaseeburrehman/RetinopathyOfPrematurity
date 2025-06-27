@@ -89,7 +89,6 @@ https://drive.google.com/file/d/1Bn37j9GG7JW9RoVzMQd_aex_dvAf2lHR/view?usp=shari
 pip install -r requirements.txt
 \`\`\`
 
-
 #### Option B: Using setup script
 \`\`\`
 python setup.py install
@@ -147,7 +146,7 @@ Open your web browser and navigate to:
 git clone https://github.com/yourusername/ROP-Classification-System.git
 cd ROP-Classification-System
 
-# Create virtual environment
+# Create a virtual environment
 python -m venv rop_env
 rop_env\Scripts\activate
 
@@ -167,45 +166,11 @@ source rop_env/bin/activate
 pip install -r requirements.txt
 \`\`\`
 
-**Ubuntu/Linux:**
-\`\`\`bash
-# Update system
-sudo apt update
-sudo apt install python3 python3-pip python3-venv git
-
-# Clone repository
-https://github.com/mehaseeburrehman/RetinopathyOfPrematurity.git
-cd ROP-Classification-System
-
-# Create virtual environment
-python3 -m venv rop_env
-source rop_env/bin/activate
-
-# Install dependencies
-pip install -r requirements.txt
-\`\`\`
-
-#### 2. Model Setup
-
-\`\`\`bash
-# Create models directory
-mkdir models
-
-# Download your trained model
-# Method 1: Direct download (replace URL)
-https://drive.google.com/file/d/12nBZuHOqeJZm_ykhC4nSzYr5wHgPV2x_/view?usp=drive_link
-# Method 2: From Google Drive (if using Google Drive)
-
-# Method 3: Manual download
-# Download from your provided link and place in models/ folder
-\`\`\`
-https://drive.google.com/file/d/12nBZuHOqeJZm_ykhC4nSzYr5wHgPV2x_/view?usp=drive_link
-
 # Add your sample images with these exact names:
-# - healthy.jpg (normal retina)
-# - type1.jpg (mild ROP)
-# - type2.jpg (severe ROP) 
-# - rd.jpg (retinal detachment)
+ - healthy.jpg (normal retina)
+ - type1.jpg (mild ROP)
+ - type2.jpg (severe ROP) 
+ - rd.jpg (retinal detachment)
 \`\`\`
 
 #### 4. Configuration (Optional)
