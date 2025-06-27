@@ -1,11 +1,11 @@
-# 🔬 Eye Image Classification Web App
+# 🔬 ROP Image Classification Web App
 
-A complete machine learning web application for classifying eye images with user authentication, prediction history, and easy deployment capabilities.
+A complete machine learning web application for classifying ROP images with user authentication, prediction history, and easy deployment capabilities.
 
 ## 🌟 Features
 
 - **🔐 User Authentication**: Secure login/signup with password hashing
-- **🤖 AI Prediction**: Classify eye images into 4 categories:
+- **🤖 AI Prediction**: Classify ROP images into 4 categories:
   - Healthy
   - Retinal Detachment  
   - Type 1 (Diabetic Retinopathy - Mild/Moderate)
@@ -28,7 +28,7 @@ A complete machine learning web application for classifying eye images with user
 
 3. **Add your Keras model:**
    - Place your trained `.h5` model file in the project directory
-   - Rename it to `eye_classification_model.h5`
+   - Rename it to `ROP_classification_model.h5`
    - Or update the model path in `model_handler.py`
 
 4. **Run the application:**
@@ -49,7 +49,7 @@ A complete machine learning web application for classifying eye images with user
 2. **Upload files:**
    - Upload all Python files (`app.py`, `auth.py`, `database.py`, `model_handler.py`)
    - Upload `requirements.txt`
-   - Upload your trained model file (`eye_classification_model.h5`)
+   - Upload your trained model file (`ROP_classification_model.h5`)
 
 3. **Your app will automatically deploy!**
    - HF Spaces will install dependencies and start the app
@@ -77,14 +77,14 @@ A complete machine learning web application for classifying eye images with user
 ## 📁 Project Structure
 
 \`\`\`
-eye-classification-app/
+ROP-classification-app/
 ├── app.py                 # Main Gradio application
 ├── auth.py               # User authentication logic
 ├── database.py           # Database operations
 ├── model_handler.py      # ML model loading and prediction
 ├── requirements.txt      # Python dependencies
 ├── README.md            # This file
-├── eye_classification_model.h5  # Your trained model (add this)
+├── ROP_classification_model.h5  # Your trained model (add this)
 ├── users.db             # SQLite database (created automatically)
 └── predictions.db       # Predictions database (created automatically)
 \`\`\`
@@ -121,7 +121,7 @@ The app creates accounts dynamically. For testing:
    - Password: `demo123`
 
 2. **Test the prediction:**
-   - Upload any eye image
+   - Upload any ROP image
    - View the prediction result
    - Check prediction history
 
@@ -174,7 +174,7 @@ CREATE TABLE predictions (
 ### Common Issues
 
 1. **Model not loading:**
-   - Check if `eye_classification_model.h5` exists
+   - Check if `ROP_classification_model.h5` exists
    - Verify model file is not corrupted
    - Check TensorFlow version compatibility
 
@@ -216,7 +216,7 @@ This project is open source. Please ensure compliance with your model's licensin
 
 ---
 
-**Ready to classify eye images with AI! 🚀**
+**Ready to classify ROP images with AI! 🚀**
 \`\`\`
 
 Let's also create a simple deployment script:
@@ -224,7 +224,7 @@ Let's also create a simple deployment script:
 ```python file="deploy.py"
 #!/usr/bin/env python3
 """
-Deployment helper script for Eye Image Classification App
+Deployment helper script for ROP Image Classification App
 """
 
 import os
@@ -267,7 +267,7 @@ def install_dependencies():
 
 def check_model():
     """Check if model file exists"""
-    model_files = ['eye_classification_model.h5', 'model.h5', 'eye_model.h5']
+    model_files = ['ROP_classification_model.h5', 'model.h5', 'ROP_model.h5']
     
     for model_file in model_files:
         if os.path.exists(model_file):
@@ -275,12 +275,12 @@ def check_model():
             return True
     
     print("⚠️  No model file found. App will use dummy model for demonstration.")
-    print("   Add your trained model file (eye_classification_model.h5) to enable real predictions.")
+    print("   Add your trained model file (ROP_classification_model.h5) to enable real predictions.")
     return False
 
 def run_app():
     """Run the application"""
-    print("🚀 Starting Eye Image Classification App...")
+    print("🚀 Starting ROP Image Classification App...")
     try:
         subprocess.run([sys.executable, 'app.py'])
     except KeyboardInterrupt:
@@ -290,7 +290,7 @@ def run_app():
 
 def main():
     """Main deployment function"""
-    print("🔬 Eye Image Classification App - Deployment Helper")
+    print("🔬 ROP Image Classification App - Deployment Helper")
     print("=" * 50)
     
     # Check requirements
