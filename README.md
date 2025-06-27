@@ -60,14 +60,14 @@ ROP-Classification-System/
 
 ### 1. Clone Repository
 
-\`\`\`bash
+\`\`\`
 https://github.com/mehaseeburrehman/RetinopathyOfPrematurity.git
 \`\`\`
 
 ### 2. Download Required Files
 
 #### Download Trained Model
-\`\`\`bash
+\`\`\`
 # Create models directory
 mkdir models
 
@@ -85,19 +85,19 @@ https://drive.google.com/file/d/1Bn37j9GG7JW9RoVzMQd_aex_dvAf2lHR/view?usp=shari
 ### 3. Install Dependencies
 
 #### Option A: Using pip
-\`\`\`bash
+\`\`\`
 pip install -r requirements.txt
 \`\`\`
 
 
 #### Option B: Using setup script
-\`\`\`bash
+\`\`\`
 python setup.py install
 \`\`\`
 
 ### 4. Run the Application
 
-\`\`\`bash
+\`\`\`
 python app.py
 \`\`\`
 
@@ -155,19 +155,11 @@ rop_env\Scripts\activate
 pip install -r requirements.txt
 \`\`\`
 
-**macOS:**
-\`\`\`bash
-# Install Homebrew if not installed
-/bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
-
-# Install Python
-brew install python
-
 # Clone repository
 https://github.com/mehaseeburrehman/RetinopathyOfPrematurity.git
 cd ROP-Classification-System
 
-# Create virtual environment
+# Create a virtual environment
 python3 -m venv rop_env
 source rop_env/bin/activate
 
