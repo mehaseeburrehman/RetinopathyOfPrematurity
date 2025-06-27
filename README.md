@@ -71,9 +71,7 @@ https://github.com/mehaseeburrehman/RetinopathyOfPrematurity.git
 # Create models directory
 mkdir models
 
-# Download the trained model (replace with your actual model link)
-wget -O models/vgg16_Segnet.pth "YOUR_MODEL_DOWNLOAD_LINK"
-# OR manually download from:
+ # manually download model from:
 
 https://drive.google.com/file/d/12nBZuHOqeJZm_ykhC4nSzYr5wHgPV2x_/view?usp=sharing
 
