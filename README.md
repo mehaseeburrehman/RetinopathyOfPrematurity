@@ -18,7 +18,13 @@ A complete machine learning web application for classifying ROP images with user
 ## 🚀 Quick Start
 
 ### Local Installation
+🔬 ROP Classification System - AI-powered web application for detecting Retinopathy of Prematurity using VGG16+SegNet deep learning model.
 
+📥 Download Links:
+🤖 Model: https://drive.google.com/file/d/12nBZuHOqeJZm_ykhC4nSzYr5wHgPV2x_/view?usp=sharing
+📊 Dataset: https://drive.google.com/file/d/1Bn37j9GG7JW9RoVzMQd_aex_dvAf2lHR/view?usp=sharing
+
+🚀 Quick Start: python setup.py && python app.py
 1. **Clone or download the project files**
 
 2. **Install dependencies:**
