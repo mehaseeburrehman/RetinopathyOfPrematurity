@@ -1,4 +1,4 @@
-# 🔬 Retinopathy of Prematurity (ROP) Classification System
+# Retinopathy of Prematurity (ROP) Classification System
 
 A web-based AI application for classifying eye images to detect Retinopathy of Prematurity using a VGG16+SegNet deep learning model.
 
@@ -173,7 +173,7 @@ Open your web browser and go to: **http://localhost:7860**
 **1. Python not found**
 
 ```
-'python' is not recognized as an internal or external command
+'python' is not recognised as an internal or external command
 ```
 
 **Solution:** Install Python from python.org and make sure "Add to PATH" is checked during installation.
