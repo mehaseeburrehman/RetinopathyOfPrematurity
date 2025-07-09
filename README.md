@@ -21,7 +21,7 @@ The system classifies retinal images into 4 categories:
 ## 📁 Project Structure
 
 ```plaintext
-ROP-Classification-System/
+RetinopathyOfPrematurity/
 ├── app.py                    # Main application file
 ├── auth.py                   # User authentication system
 ├── database.py               # Database operations
