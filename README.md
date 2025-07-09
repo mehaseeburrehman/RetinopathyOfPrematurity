@@ -107,7 +107,7 @@ python app.py
 1. Navigate to project folder:
 
 ```
-cd path\to\ROP-Classification-System
+cd path\to\RetinopathyOfPrematurity
 ```
 
 2. Activate virtual environment:
