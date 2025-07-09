@@ -52,7 +52,7 @@ Open **Command Prompt** or **PowerShell** and run:
 
 ```cmd
 git clone https://github.com/mehaseeburrehman/RetinopathyOfPrematurity.git
-cd ROP-Classification-System
+cd RetinopathyOfPrematurity
 ```
 
 ### Step 2: Open in VS Code
