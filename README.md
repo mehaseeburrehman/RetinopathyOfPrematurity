@@ -1,186 +1,191 @@
 # 🔬 Retinopathy of Prematurity (ROP) Classification System
 
-A comprehensive web application for classifying eye images to detect Retinopathy of Prematurity using VGG16+SegNet deep learning model with user authentication and prediction history.
-
-## 🌟 Features
-
-- **🤖 AI-Powered Classification**: VGG16+SegNet model for accurate ROP detection
-- **🔐 User Authentication**: Secure login/signup with password hashing
-- **📊 Prediction History**: Track and download your prediction history
-- **🖼️ Sample Images**: Pre-loaded sample images for quick testing
-- **💾 Data Export**: Download prediction history as CSV
-- **🎨 Modern UI**: Clean, responsive Gradio interface
+A web-based AI application for classifying eye images to detect Retinopathy of Prematurity using a VGG16+SegNet deep learning model.
 
 ## 🏥 Medical Classifications
 
-The system classifies eye images into 4 categories:
-- **Healthy**: Normal retina condition
-- **RD**: Retinal Detachment
-- **Type 1**: Mild Retinopathy of Prematurity
-- **Type 2**: Severe Retinopathy of Prematurity
+The system classifies retinal images into 4 categories:  
+- **Healthy**: Normal retina condition  
+- **RD**: Retinal Detachment  
+- **Type 1**: Mild Retinopathy of Prematurity  
+- **Type 2**: Severe Retinopathy of Prematurity  
+
+## 🌟 Features
+
+- **🤖 AI-Powered Classification**: VGG16+SegNet model for ROP detection  
+- **🔐 User Authentication**: Secure login/signup system  
+- **📊 Prediction History**: Track and download prediction history as CSV  
+- **🖼️ Sample Images**: Pre-loaded sample images for testing  
+- **🎨 Modern UI**: Clean Gradio web interface  
 
 ## 📁 Project Structure
 
-\`\`\`
+```plaintext
 ROP-Classification-System/
-├── app.py                    # Main application entry point
+├── app.py                    # Main application file
 ├── auth.py                   # User authentication system
-├── database.py               # Database operations (SQLite)
+├── database.py               # Database operations
 ├── model_handler.py          # ML model loading and prediction
 ├── requirements.txt          # Python dependencies
-├── README.md                 # This documentation
-├── setup.py                  # Installation script
 ├── ui_components/            # UI modules
 │   ├── __init__.py
-│   ├── login_ui.py          # Login/Register interface
-│   ├── prediction_ui.py     # Prediction interface
-│   ├── history_ui.py        # History management
-│   └── about_ui.py          # About page
-├── sample/                   # Sample images (create this folder)
-│   ├── healthy.jpg          # Healthy retina sample
-│   ├── type1.jpg            # Type 1 ROP sample
-│   ├── type2.jpg            # Type 2 ROP sample
-│   └── rd.jpg               # Retinal Detachment sample
-├── models/                   # Model files (create this folder)
-│   └── vgg16_Segnet.pth     # Your trained model (download separately)
-└── docs/                     # Documentation
-    ├── installation.md
-    ├── usage.md
-    └── model_info.md
-\`\`\`
+│   ├── login_ui.py
+│   ├── prediction_ui.py
+│   ├── history_ui.py
+│   └── about_ui.py
+├── sample/                   # Sample images folder (create manually)
+└── models/                   # Model files folder (create manually)
+```
 
-## 🚀 Quick Start
+## 🚀 Installation & Setup (Windows)
 
 ### Prerequisites
+- **Windows 10/11**  
+- **Python 3.8 or higher** — [Download from python.org](https://www.python.org/downloads/)  
+- **VS Code** — [Download from code.visualstudio.com](https://code.visualstudio.com/)
+- **MODEL** — https://drive.google.com/file/d/12nBZuHOqeJZm_ykhC4nSzYr5wHgPV2x_/view?usp=sharing
+- **Dataset** — https://drive.google.com/file/d/1Bn37j9GG7JW9RoVzMQd_aex_dvAf2lHR/view?usp=sharing
 
-- Python 3.8 or higher
-- higher then i5 2nd gen
-- 4GB+ RAM
-- Internet connection for initial setup
+### Step 1: Clone the Repository
 
-### 1. Clone Repository
+Open **Command Prompt** or **PowerShell** and run:
 
-\`\`\`
-https://github.com/mehaseeburrehman/RetinopathyOfPrematurity.git
-\`\`\`
+```cmd
+git clone https://github.com/mehaseeburrehman/RetinopathyOfPrematurity.git
+cd ROP-Classification-System
+```
 
-### 2. Download Required Files
+### Step 2: Open in VS Code
+### Step 3: Create Virtual Environment
 
-#### Download Trained Model
-\`\`\`
-# Create models directory
-mkdir models
+In VS Code terminal (Terminal → New Terminal):
 
- # manually download model from:
+```
+python -m venv rop_env
+```
 
-https://drive.google.com/file/d/12nBZuHOqeJZm_ykhC4nSzYr5wHgPV2x_/view?usp=sharing
+### Step 4: Activate Virtual Environment
 
-# Download  images from the dataset or use your own
+```
+rop_env\Scripts\activate
+```
 
-https://drive.google.com/file/d/1Bn37j9GG7JW9RoVzMQd_aex_dvAf2lHR/view?usp=sharing
+You should see `(rop_env)` at the beginning of your command prompt.
 
-# Place 4 sample images: healthy.jpg, type1.jpg, type2.jpg, rd.jpg
-\`\`\`
+### Step 5: Install Dependencies
 
-### 3. Install Dependencies
-
-#### Option A: Using pip
-\`\`\`
+```
 pip install -r requirements.txt
-\`\`\`
+```
 
-#### Option B: Using setup script
-\`\`\`
-python setup.py install
-\`\`\`
+### Step 6: Create Required Folders
 
-### 4. Run the Application
+```cmd
+mkdir models
+mkdir sample
+```
 
-\`\`\`
+### Step 7: Download Model File
+
+1. Download your trained model file `vgg16_Segnet.pth`  
+2. Place it in the `models/` folder  
+3. The path should be: `models/vgg16_Segnet.pth`  
+
+## 🏃‍♂️ Running the Application
+
+### Method 1: Run from VS Code
+
+1. Make sure virtual environment is activated: `(rop_env)` should be visible  
+2. In VS Code terminal, run:
+
+```
 python app.py
-\`\`\`
+```
 
-The application will start and display:
-\`\`\`
-🚀 Starting Retinopathy of prematurity App...
+### Method 2: Run from Command Prompt
+
+1. Navigate to project folder:
+
+```
+cd path\to\ROP-Classification-System
+```
+
+2. Activate virtual environment:
+
+```
+rop_env\Scripts\activate
+```
+
+3. Run the application:
+
+```
+python app.py
+```
+
+### Expected Output
+
+You should see:
+
+```
+🚀 Starting Retinopathy of Prematurity App...
 📊 Initializing database...
 ✅ Database initialized successfully
 🤖 Loading ML model...
 ✅ Model loaded successfully!
 ✅ App ready!
 Running on local URL: http://127.0.0.1:7860
-\`\`\`
+```
 
-### 5. Access the Application
+### Access the Application
 
-Open your web browser and navigate to:
-- **Local**: http://localhost:7860
-- **Network**: Use the public URL if share=True
+Open your web browser and go to: **http://localhost:7860**
 
-## 📖 Detailed Installation Guide
+## 📖 How to Use
 
-### System Requirements
+### 1. Create Account
 
-#### Minimum Requirements:
-- **OS**: Windows 10, macOS 10.14, or Ubuntu 18.04+
-- **Python**: 3.8+
-- **RAM**: 4GB
-- **Storage**: 2GB free space
-- **GPU**: Optional (CPU inference supported)
+- Click **"Register"** tab  
+- Enter username and password (minimum 6 characters)  
+- Click **"Register"**
 
-#### Recommended Requirements:
-- **RAM**: 8GB+
-- **GPU**: NVIDIA GPU with 4GB+ VRAM
-- **Storage**: 5GB+ free space
+### 2. Login
 
-### Step-by-Step Installation
+- Enter your credentials  
+- Click **"Login"**
 
-#### 1. Environment Setup
+### 3. Make Predictions
 
-**Windows:**
-\`\`\`cmd
-# Install Python from python.org
-# Open Command Prompt as Administrator
+- **Upload Image:** Click "Upload Eye Image" and select a retinal image  
+- **Use Samples:** Click any sample image to load it  
+- **Analyze:** Click "Analyze Image" button  
+- **View Results:** See confidence percentages for each class  
 
-# Clone repository
-git clone https://github.com/yourusername/ROP-Classification-System.git
-cd ROP-Classification-System
+### 4. View History
 
-# Create a virtual environment
-python -m venv rop_env
-rop_env\Scripts\activate
+- Go to **"Prediction History"** tab  
+- Click **"Load History"** to see past predictions  
+- Click **"Download CSV"** to export your data  
 
-# Install dependencies
-pip install -r requirements.txt
-\`\`\`
+## 🔧 Troubleshooting
 
-# Clone repository
-https://github.com/mehaseeburrehman/RetinopathyOfPrematurity.git
-cd ROP-Classification-System
+### Common Issues
 
-# Create a virtual environment
-python3 -m venv rop_env
-source rop_env/bin/activate
+**1. Python not found**
 
-# Install dependencies
-pip install -r requirements.txt
-\`\`\`
+```
+'python' is not recognized as an internal or external command
+```
 
-# Add your sample images with these exact names:
- - healthy.jpg (normal retina)
- - type1.jpg (mild ROP)
- - type2.jpg (severe ROP) 
- - rd.jpg (retinal detachment)
-\`\`\`
+**Solution:** Install Python from python.org and make sure "Add to PATH" is checked during installation.
 
-#### 4. Configuration (Optional)
+**2. Virtual environment activation fails**
 
-Create `config.py` for custom settings:
-```python
-# config.py
-MODEL_PATH = "models/vgg16_Segnet.pth"
-SAMPLE_DIR = "sample/"
-DATABASE_PATH = "predictions.db"
-USERS_DB_PATH = "users.db"
-HOST = "127.0.0.1"
-PORT = 7860
+```
+cannot be loaded because running scripts is disabled on this system
+```
+
+**Solution:** Run PowerShell as Administrator and execute:
+
+```powershell
+Set-ExecutionPolicy -ExecutionPolicy RemoteSigned -Scope CurrentUser
+```
