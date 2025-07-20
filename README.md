@@ -1,5 +1,19 @@
 # Retinopathy of Prematurity (ROP) Classification System
+# Abstract
+Retinopathy of Prematurity (ROP) is a critical eye disease affecting premature infants, often
+leading to blindness if not diagnosed and treated promptly. Current diagnostic methods are
+limited by their variability in resources and expertise among ophthalmologists. In the case of
+AI-based solutions, the focus is either on disease detection on a broader scale or on specific
+isolated symptoms. To address these challenges, we advanced AI-driven system designed
+to enhance the early detection and diagnosis of ROP through a multi-level classification
+approach. This system leverages deep-learning algorithms to enhance fundus images using
+image processing techniques, detecting and classifying key retinal changes such as abnormal
+blood vessel growth and retinal detachment into types (Healthy, Type-1, Type-2, and RD). This
+innovation aims to bridge the gap in ROP diagnosis, particularly in resource-limited settings,
+and support clinicians in making informed decisions, ultimately improving patient outcomes and
+reducing the risk of blindness in affected infants.
 
+# Introduce
 A web-based AI application for classifying eye images to detect Retinopathy of Prematurity using a VGG16+SegNet deep learning model.
 
 ## 🏥 Medical Classifications
